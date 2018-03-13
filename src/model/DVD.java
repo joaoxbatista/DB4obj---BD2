@@ -1,3 +1,4 @@
+package model;
 public class DVD extends Midia{
     private String diretor;
     private String produtor;

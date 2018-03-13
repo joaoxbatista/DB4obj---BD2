@@ -1,7 +1,11 @@
+package model;
+
 public class Livro extends Midia{
     private String ISBN;
     private String autor;
-
+    
+    public Livro() {}
+    
     public Livro(String ISBN, String autor, String cod, String titulo, int ano) {
         super(cod, titulo, ano);
         this.ISBN = ISBN;
@@ -23,6 +27,11 @@ public class Livro extends Midia{
     public void setAutor(String autor) {
         this.autor = autor;
     }
+
+	@Override
+	public String toString() {
+		return "Livro [ISBN=" + ISBN + ", autor=" + autor + "]";
+	}
 
     
     

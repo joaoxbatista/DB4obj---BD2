@@ -1,24 +1,36 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author limei
- */
+import database.Conexao;
+import model.Item;
+import model.Livro;
+import model.Midia;
+import model.Pedido;
+import repository.LivroRepository;
 public class Main {
 
     public static void main(String[] args) {
         
-        Midia l = new Livro("abc", "paulo", "123", "pai de familia", 2017);
-        Pedido p = new Pedido(123);
-        Conexao c = new Conexao();
+        Livro l1 = new Livro("SA2102-BR", "Author 01", "001231", "Some Title Here", 2017);
+       
+        //Especifica os parametros de busca
+        Livro lbusca = new Livro();
+        lbusca.setAno(2017);
         
-        p.AdicionaItem(new Item(l, 3));
+        LivroRepository lr = new LivroRepository();
         
-        c.CadastrarPedido(p);
-    }
+        //Salvar livro
+        System.out.println(lr.store(l1));
+        
+        //Obter todos os livros do banco
+        System.out.println(lr.all());
+        
+        //Atualizar livro no banco
+        l1.setAutor("João Batista");
+        System.out.println(lr.update(l1));
+        
+        //Obter um livro específico
+        System.out.println(lr.find(lbusca));
+        
+        //Remover um livro do banco
+        System.out.println(lr.remove("001231"));
+    }	
     
 }

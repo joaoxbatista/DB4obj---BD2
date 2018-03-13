@@ -1,3 +1,5 @@
+package model;
+
 public class Item {
     private Midia m;
     private int qtd;

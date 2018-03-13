@@ -1,9 +1,12 @@
+package model;
 public class Midia {
     
     private String cod;
     private String titulo;
     private int ano;
-
+    
+    public Midia() {}
+    
     public Midia(String cod, String titulo, int ano) {
         this.cod = cod;
         this.titulo = titulo;
