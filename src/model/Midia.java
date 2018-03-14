@@ -1,16 +1,18 @@
 package model;
 public class Midia {
     
-    private String cod;
-    private String titulo;
-    private int ano;
+    protected String cod;
+    protected String titulo;
+    protected int ano;
+    protected double preco;
     
     public Midia() {}
     
-    public Midia(String cod, String titulo, int ano) {
+    public Midia(String cod, String titulo, int ano, double preco) {
         this.cod = cod;
         this.titulo = titulo;
         this.ano = ano;
+        this.preco = preco;
     }
 
     public String getCod() {
@@ -36,6 +38,14 @@ public class Midia {
     public void setAno(int ano) {
         this.ano = ano;
     }
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
 
     
 }

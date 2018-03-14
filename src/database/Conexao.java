@@ -1,7 +1,6 @@
 package database;
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
-import model.Pedido;
 
 public class Conexao {
     
@@ -14,7 +13,7 @@ public class Conexao {
         	Conexao.instance = Db4oEmbedded.openFile("Banco");
         }
         
-        System.out.println("Conexão com o banco de dados estabelecida com sucesso!");
+//        System.out.println("Conexão com o banco de dados estabelecida com sucesso!");
         return Conexao.instance;
     }
     
@@ -22,7 +21,7 @@ public class Conexao {
     public static void close(){
         Conexao.instance.close();
         Conexao.instance = null;
-        System.out.println("Conexão com o banco de dados finalizada!");
+//        System.out.println("Conexão com o banco de dados finalizada!");
     }
     
 }

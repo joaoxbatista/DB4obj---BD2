@@ -5,8 +5,8 @@ public class DVD extends Midia{
     
     public DVD() {}
     
-    public DVD(String diretor, String produtor, String cod, String titulo, int ano) {
-        super(cod, titulo, ano);
+    public DVD(String diretor, String produtor, String cod, String titulo, int ano, double preco) {
+        super(cod, titulo, ano, preco);
         this.diretor = diretor;
         this.produtor = produtor;
     }
@@ -29,7 +29,7 @@ public class DVD extends Midia{
 
 	@Override
 	public String toString() {
-		return "DVD [diretor=" + diretor + ", produtor=" + produtor + "]";
+		return "DVD [diretor=" + this.diretor + ", produtor=" + this.produtor + ", preço=" + this.preco + "]";
 	}
     
     

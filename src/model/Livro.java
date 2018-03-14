@@ -6,8 +6,8 @@ public class Livro extends Midia{
     
     public Livro() {}
     
-    public Livro(String ISBN, String autor, String cod, String titulo, int ano) {
-        super(cod, titulo, ano);
+    public Livro(String ISBN, String autor, String cod, String titulo, int ano, double preco) {
+        super(cod, titulo, ano, preco);
         this.ISBN = ISBN;
         this.autor = autor;
     }
@@ -30,7 +30,7 @@ public class Livro extends Midia{
 
 	@Override
 	public String toString() {
-		return "Livro [ISBN=" + ISBN + ", autor=" + autor + "]";
+		return "Livro [ISBN=" + this.ISBN + ", titulo= " + this.titulo + ", autor=" + this.autor + ", preço=" + this.preco + "]";
 	}
 
     
