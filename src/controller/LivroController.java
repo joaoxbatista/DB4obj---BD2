@@ -20,41 +20,6 @@ import model.Livro;
 import repository.LivroRepository;
 
 public class LivroController implements Initializable{
-
-	//	public static void main(String args[])
-	//	{
-	//		/* 
-	//		 * Operações com livros 
-	//		 * 
-	//		 * */    	
-	//		Livro l1 = new Livro("SA2102-BR", "Author 01", "001231", "Some Title Here", 2017, 124.21);
-	//		//Especifica os parametros de busca
-	//		Livro lbusca = new Livro();
-	//		lbusca.setAno(2017);
-	//
-	//		LivroRepository lr = new LivroRepository();
-	//
-	//		//Salvar livro
-	//		System.out.println(lr.store(l1));
-	//
-	//		//Obter todos os livros do banco
-	//		System.out.println(lr.all());
-	//
-	//		//Atualizar livro no banco
-	//		l1.setAutor("João Batista");
-	//		System.out.println(lr.update(l1));
-	//
-	//		//Obter um livro específico
-	//		System.out.println(lr.find(lbusca));
-	//
-	//		//Remover um livro do banco
-	//		System.out.println(lr.remove("001231"));
-	//
-	//		//Obter todos os livros do banco
-	//		System.out.println(lr.all());
-	//	}
-
-
 	
     @FXML
     private TextField tfCodigo;
@@ -132,6 +97,39 @@ public class LivroController implements Initializable{
 		livro.setAutor(this.tfAutor.getText());
 		livro.setTitulo(this.tfTitulo.getText());
 		lr.store(livro);
+		this.carregarLivros();
+	}
+	
+	public void removerLivro(ActionEvent event)
+	{
+		Livro livro_selecionado = (Livro)tblLivros.getSelectionModel().getSelectedItem();
+		LivroRepository lr = new LivroRepository();
+		lr.remove(livro_selecionado.getCod());
+		this.carregarLivros();
+	}
+	
+	public void carregarLivro(ActionEvent event)
+	{
+		Livro livro_selecionado = (Livro)tblLivros.getSelectionModel().getSelectedItem();
+		this.tfCodigo.setText(livro_selecionado.getCod());
+		this.tfAno.setText(Integer.toString(livro_selecionado.getAno()));
+		this.tfIsbn.setText(livro_selecionado.getISBN());
+		this.tfPreco.setText(Double.toString(livro_selecionado.getPreco()));
+		this.tfAutor.setText(livro_selecionado.getAutor());
+		this.tfTitulo.setText(livro_selecionado.getTitulo());
+	}
+	
+	public void atualizarLivro(ActionEvent event)
+	{
+		LivroRepository lr = new LivroRepository();
+		Livro livro = new Livro();
+		livro.setCod(this.tfCodigo.getText());
+		livro.setAno(Integer.parseInt(this.tfAno.getText()));
+		livro.setISBN(this.tfIsbn.getText());
+		livro.setPreco(Double.parseDouble(this.tfPreco.getText()));
+		livro.setAutor(this.tfAutor.getText());
+		livro.setTitulo(this.tfTitulo.getText());
+		lr.update(livro);
 		this.carregarLivros();
 	}
 }

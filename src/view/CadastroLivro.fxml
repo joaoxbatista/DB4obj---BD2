@@ -16,7 +16,7 @@
       <TextField fx:id="tfAno" layoutX="223.0" layoutY="98.0" promptText="Insira o ano" />
       <TextField fx:id="tfTitulo" layoutX="403.0" layoutY="60.0" promptText="Insira o título" />
       <TextField fx:id="tfPreco" layoutX="401.0" layoutY="98.0" promptText="Insira um preço" />
-      <Button fx:id="btnSalvarLivro" layoutX="39.0" layoutY="139.0" mnemonicParsing="false" onAction="#salvarLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: rgb(10, 190, 23);" text="Salvar" textFill="WHITE" />
+      <Button fx:id="btnSalvarLivro" layoutX="39.0" layoutY="139.0" mnemonicParsing="false" onAction="#salvarLivro" prefHeight="32.0" prefWidth="83.0" style="-fx-background-color: rgb(10, 190, 23);" text="Salvar" textFill="WHITE" />
       <Text layoutX="40.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE LIVROS">
          <font>
             <Font name="FreeSans" size="18.0" />
@@ -32,6 +32,8 @@
             <TableColumn fx:id="tblLivrosPreco" prefWidth="72.0" text="Preço" />
         </columns>
       </TableView>
-      <Button layoutX="223.0" layoutY="139.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: rgb(255, 10, 10);" text="Remover" textFill="WHITE" />
+      <Button fx:id="btnRemover" layoutX="134.0" layoutY="139.0" mnemonicParsing="false" onAction="#removerLivro" prefHeight="32.0" prefWidth="83.0" style="-fx-background-color: rgb(255, 10, 10);" text="Remover" textFill="WHITE" />
+      <Button fx:id="btnCarregar" layoutX="228.0" layoutY="139.0" mnemonicParsing="false" onAction="#carregarLivro" prefHeight="32.0" prefWidth="83.0" style="-fx-background-color: rgb(10, 80, 90);" text="Carregar" textFill="WHITE" />
+      <Button fx:id="btnAtualizar" layoutX="321.0" layoutY="139.0" mnemonicParsing="false" onAction="#atualizarLivro" prefHeight="32.0" prefWidth="83.0" style="-fx-background-color: rgb(10, 80, 2000);" text="Atualizar" textFill="WHITE" />
    </children>
 </Pane>
